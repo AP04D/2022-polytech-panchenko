@@ -1,6 +1,6 @@
-#include <iostream>
+#include "func.h"
 
 int main() {
-    std::cout << "Hello World!";
-    return 0;
+	print();
+	return 0;
 }
