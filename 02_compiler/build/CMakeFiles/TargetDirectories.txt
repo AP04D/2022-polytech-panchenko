@@ -1,0 +1,2 @@
+C:/Users/apdmg/2022-polytech-panchenko/02_compiler/build/CMakeFiles/edit_cache.dir
+C:/Users/apdmg/2022-polytech-panchenko/02_compiler/build/CMakeFiles/rebuild_cache.dir
