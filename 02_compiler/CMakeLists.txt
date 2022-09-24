@@ -3,7 +3,7 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("CMakeProject1")
+project ("hello_world")
 
 # Включите подпроекты.
-add_subdirectory ("CMakeProject1")
+add_subdirectory ("func.cpp func.h")
