@@ -14,6 +14,11 @@ int search_position(int arr[], int n, int x) {
     return n;
 }
 
+int* insert_sorted(int arr[], int n, int x) {
+    int p = search_position(arr, n, x);
+    return insert(arr, n, x, p);
+};
+
 int main()
 {
     // `insert` example
@@ -30,6 +35,14 @@ int main()
 
     int a2[4] = { 1, 3, 5, 6 };
     assert(search_position(a2, 4, 7) == 4);
+
+    // `insert_sorted` example
+    int a4[10] = { 0, 1, 2, 3, 4, 5,    6, 7, 8, 9 };
+    int expected_r4[11] = { 0, 1, 2, 3, 4, 5, 5, 6, 7, 8, 9 };
+
+    auto r4 = insert_sorted(a4, 10, 5);
+    for (auto i = 0; i < 11; ++i)
+        assert(r4[i] == expected_r4[i]);
 
     return 0;
 }
