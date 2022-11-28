@@ -1,6 +1,39 @@
 #include <random>
 #include <iostream>
 
+
+using namespace std;
+
+
+void swap(int arr[], int idx_a, int idx_b)
+{
+    {
+        int temp = arr[idx_a];
+        arr[idx_a] = arr[idx_b];
+        arr[idx_b] = temp;
+    }
+}
+void selection_sort(int arr[], int size)
+{
+    for (int i = 0; i < size - 1; i++)
+    {
+
+        int min_index = i;
+        for (int j = i + 1; j < size; j++)
+        {
+            if (arr[j] < arr[min_index])
+            {
+                min_index = j;
+            }
+        }
+
+        if (min_index != i)
+        {
+
+            swap(arr, i, min_index);
+        }
+    }
+}
 void fill_array_random(int arr[], int n, int a, int b)
 {
     std::random_device dev;
@@ -12,46 +45,45 @@ void fill_array_random(int arr[], int n, int a, int b)
         arr[i] = dist(rng);
     }
 }
-
-void print_array(int arr[], int n, bool show_index = false)
+void print_array(int arr[], int n, bool show_index = true)
 {
-    std::cout << "{";
-    if (show_index == true)
+    selection_sort(arr, n);
+    if (show_index == false)
     {
-        for (int x = 0; x < n; ++x)
+        cout << "{";
+        for (int i = 0; i < n; i++)
         {
-            if (x != n - 1)
+            cout << arr[i];
+            while (i < n)
             {
-                std::cout << x << ": " << arr[x] << ", ";
-            }
-            else
-            {
-                std::cout << x << ": " << arr[x];
+                cout << ",";
+                break;
             }
         }
+        cout << "}" << endl;
     }
     else
     {
-        for (int x = 0; x < n; ++x)
+        cout << "{";
+        for (int i = 0; i < n; i++)
         {
-            if (x != n - 1)
+            cout << i << ":" << arr[i];
+            while (i < n)
             {
-                std::cout << arr[x] << ", ";
-            }
-            else
-            {
-                std::cout << arr[x];
+                cout << ",";
+                break;
             }
         }
-    }   
-    std::cout << "}" << std::endl;
+        cout << "}" << endl;
+    }
 }
+
 
 int main()
 {
     int arr[10];
     int n = sizeof(arr) / sizeof(arr[0]);
     fill_array_random(arr, n, 0, 100);
-    print_array(arr, n, true);
+    print_array(arr, n);
     return 0;
 }
