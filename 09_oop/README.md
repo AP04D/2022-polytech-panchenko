@@ -9,7 +9,7 @@ TA::ctor
 2
 5
 DefaultName 
-Pavel Pilip and Alexe Chepinoga
+Pavel Skiba and Sasha Ekordin
 TA::dtor
 Student::dtor
 Teacher::dtor
@@ -26,7 +26,7 @@ Student::ctor
 TA::ctor
 2
 5
-Pavel Pilip  and Alexe Chepinoga
+Pavel Skiba  and Sasha Ekordin
 TA::dtor
 Student::dtor
 Teacher::dtor
