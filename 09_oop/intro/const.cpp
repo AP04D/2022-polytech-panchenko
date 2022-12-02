@@ -72,7 +72,7 @@ int main()
     string name{};
     name = ta.name;
     cout << name << endl;
-    ta.name = "Pavel Pilip and Alexe Chepinoga";
+    ta.name = "Pavel Skiba  and Sasha Ekordin";
     name = ta.name;
     cout << name << endl;
 
